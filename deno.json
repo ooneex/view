@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns",
+      "deno.unstable"
+    ]
+  },
+  "imports": {
+    "@ooneex/collection": "../Core/Collection/mod.ts",
+    "@config/app": "./config/app/mod.ts",
+    "@ooneex/config": "../Core/Config/mod.ts",
+    "@ooneex/controller": "../Core/Controller/mod.ts",
+    "@ooneex/directory": "../Core/Directory/mod.ts",
+    "@ooneex/env": "../Core/Env/mod.ts",
+    "@ooneex/exception": "../Core/Exception/mod.ts",
+    "@ooneex/file": "../Core/File/mod.ts",
+    "@ooneex/helper": "../Core/Helper/mod.ts",
+    "@ooneex/http": "../Core/Http/mod.ts",
+    "@ooneex/ioc": "../Core/Ioc/mod.ts",
+    "@ooneex/kernel": "../Core/Kernel/mod.ts",
+    "@ooneex/output": "../Core/Output/mod.ts",
+    "@ooneex/path": "../Core/Path/mod.ts",
+    "@ooneex/routing": "../Core/Routing/mod.ts",
+    "@ooneex/decorator": "../Core/Decorator/mod.ts",
+
+    "@ooneex/testing/": "https://deno.land/std@0.182.0/testing/"
+  },
+  "tasks": {
+    "start": "deno run -A --watch=.env,.env.local,config/,controllers/,middlewares/ index.ts",
+    "test:watch": "deno test -A --watch",
+    "fmt": "deno fmt",
+    "lint": "deno fmt --check && deno lint"
+  }
+}
