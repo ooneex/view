@@ -1,4 +1,5 @@
-import { Body, Header } from "@ooneex/view";
+import { Island } from "@ooneex/island";
+import { Body, Head } from "@ooneex/view";
 
 export interface IHomepageViewProps {
   message: string;
@@ -7,10 +8,11 @@ export interface IHomepageViewProps {
 export const HomepageView = ({ message }: IHomepageViewProps) => {
   return (
     <>
-      <Header title="Homepage" />
+      <Head title="Homepage" />
       <Body>
         <h1>HomepageView</h1>
         <p>{message}</p>
+        <Island name={"ShowUsers"} />
       </Body>
     </>
   );

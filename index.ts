@@ -1,5 +1,7 @@
+import { EnvHelper } from "@ooneex/env";
 import { print } from "@ooneex/exception";
 import { Server } from "@ooneex/http";
+import { watchIslands } from "@ooneex/island";
 import { Kernel } from "@ooneex/kernel";
 
 Deno.env.set("ROOT_DIR", new URL(".", import.meta.url).pathname);
@@ -11,5 +13,15 @@ try {
   Deno.exit(1);
 }
 
-const server = Server.create();
-await server.start();
+const envHelper = new EnvHelper();
+
+if (envHelper.isLocal()) {
+  await watchIslands();
+}
+
+try {
+  const server = Server.create();
+  await server.start();
+} catch (e) {
+  print(e);
+}

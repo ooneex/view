@@ -2,3 +2,5 @@ var/*
 !var/.gitkeep
 *.local
 deno.lock
+public/islands
+public/manifest.json
