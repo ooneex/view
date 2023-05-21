@@ -4,12 +4,12 @@ import { HomepageView, IHomepageViewProps } from "@views";
 
 export class HomepageController {
   @Route("homepage", "/")
-  public index(
+  public async index(
     _request: Request,
     response: HttpResponse,
-  ): Response {
-    return response.render<IHomepageViewProps>(HomepageView, {
-      message: "Welcome!",
+  ): Promise<Response> {
+    return await response.render<IHomepageViewProps>(HomepageView, {
+      message: "Welcome",
     });
   }
 }
