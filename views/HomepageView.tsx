@@ -1,9 +1,11 @@
-import { Island } from "@ooneex/island";
+import { getIsland, Island } from "@ooneex/island";
 import { Body, Head } from "@ooneex/view";
 
 export interface IHomepageViewProps {
   message: string;
 }
+
+const island = await getIsland("ShowMessage");
 
 export const HomepageView = ({ message }: IHomepageViewProps) => {
   return (
@@ -11,8 +13,9 @@ export const HomepageView = ({ message }: IHomepageViewProps) => {
       <Head title="Homepage" />
       <Body>
         <h1>HomepageView</h1>
-        <p>{message}</p>
-        <Island name={"ShowUsers"} />
+        <Island config={island} data={{ key: 0, value: { message } }}>
+          Loading...
+        </Island>
       </Body>
     </>
   );
