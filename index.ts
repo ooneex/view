@@ -1,4 +1,3 @@
-import { config } from "@config/app";
 import { Collection } from "https://deno.land/x/ooneex@0.0.12/Collection/mod.ts";
 import {
   NotFoundController,
@@ -17,6 +16,7 @@ import {
   IRoute,
   Router,
 } from "https://deno.land/x/ooneex@0.0.12/Routing/mod.ts";
+import { config } from "./config/app/mod.ts";
 
 try {
   await Kernel.boot({
