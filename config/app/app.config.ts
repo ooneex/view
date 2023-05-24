@@ -1,8 +1,7 @@
 import { AppConfigType } from "./types.ts";
 
-const config: AppConfigType = {
+export const config: AppConfigType = {
   directories: {
-    "root": new URL("../..", import.meta.url).pathname.replace(/\/+$/, ""),
     "components": "components",
     "config": "config",
     "controllers": "controllers",
@@ -13,5 +12,3 @@ const config: AppConfigType = {
     "views": "views",
   },
 };
-
-export default config;

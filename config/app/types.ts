@@ -1,5 +1,4 @@
 export type AppDirectoryType = {
-  root: string;
   components: string;
   config: string;
   controllers: string;
