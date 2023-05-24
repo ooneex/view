@@ -6,7 +6,10 @@ import { print } from "@ooneex/exception";
 import { Server } from "@ooneex/http";
 import { get, Keys, registerConstant } from "@ooneex/ioc";
 import { Kernel } from "@ooneex/kernel";
-import { IRoute, Router } from "@ooneex/routing";
+import {
+  IRoute,
+  Router,
+} from "https://deno.land/x/ooneex@0.0.12/Routing/mod.ts";
 
 try {
   await Kernel.boot({
