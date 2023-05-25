@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  ooneex_view_assets:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: ooneex/view/assets
+    container_name: ooneex_view_assets
+    working_dir: /home/node/app
+    volumes:
+      - ./components:/home/node/app/components
+      - ./islands:/home/node/app/islands
+      - ./public:/home/node/app/public
+      - ./views:/home/node/app/views
+      - ./tailwind.config.js:/home/node/app/tailwind.config.js

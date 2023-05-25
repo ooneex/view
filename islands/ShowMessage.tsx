@@ -5,9 +5,5 @@ type Props = {
 export const ShowMessage = (props: Props) => {
   const { message } = props.useData<{ message: string }>("0");
 
-  return (
-    <>
-      <p>{message}</p>
-    </>
-  );
+  return <p>{message}</p>;
 };
