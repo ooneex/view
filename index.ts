@@ -1,22 +1,12 @@
-import { Collection } from "https://deno.land/x/ooneex@0.0.12/Collection/mod.ts";
-import {
-  NotFoundController,
-  ServerErrorController,
-} from "https://deno.land/x/ooneex@0.0.12/Controller/mod.ts";
-import { Directory } from "https://deno.land/x/ooneex@0.0.12/Directory/mod.ts";
-import { print } from "https://deno.land/x/ooneex@0.0.12/Exception/mod.ts";
-import { Server } from "https://deno.land/x/ooneex@0.0.12/Http/mod.ts";
-import {
-  get,
-  Keys,
-  registerConstant,
-} from "https://deno.land/x/ooneex@0.0.12/Ioc/mod.ts";
-import { Kernel } from "https://deno.land/x/ooneex@0.0.12/Kernel/mod.ts";
-import {
-  IRoute,
-  Router,
-} from "https://deno.land/x/ooneex@0.0.12/Routing/mod.ts";
-import { config } from "./config/app/mod.ts";
+import { config } from "@config/app";
+import { Collection } from "@ooneex/collection";
+import { NotFoundController, ServerErrorController } from "@ooneex/controller";
+import { Directory } from "@ooneex/directory";
+import { print } from "@ooneex/exception";
+import { Server } from "@ooneex/http";
+import { get, Keys, registerConstant } from "@ooneex/ioc";
+import { Kernel } from "@ooneex/kernel";
+import { IRoute, Router } from "@ooneex/routing";
 
 try {
   await Kernel.boot({
