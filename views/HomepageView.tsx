@@ -1,5 +1,5 @@
 import { getIsland, Island } from "@ooneex/island";
-import { Body, Head } from "@ooneex/view";
+import { asset, Body, Head, Page } from "@ooneex/view";
 
 export interface IHomepageViewProps {
   message: string;
@@ -9,7 +9,7 @@ const island = await getIsland("ShowMessage");
 
 export const HomepageView = ({ message }: IHomepageViewProps) => {
   return (
-    <>
+    <Page>
       <Head title="Homepage" />
       <Body>
         <h1>HomepageView</h1>
@@ -17,6 +17,6 @@ export const HomepageView = ({ message }: IHomepageViewProps) => {
           Loading...
         </Island>
       </Body>
-    </>
+    </Page>
   );
 };
