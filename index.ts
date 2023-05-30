@@ -1,15 +1,18 @@
 import { config } from "@config/app";
-import { Collection } from "@ooneex/collection";
-import { NotFoundController, ServerErrorController } from "@ooneex/controller";
-import { Directory } from "@ooneex/directory";
-import { print } from "@ooneex/exception";
-import { Server } from "@ooneex/http";
-import { get, Keys, registerConstant } from "@ooneex/ioc";
-import { Kernel } from "@ooneex/kernel";
-import { IRoute, Router } from "@ooneex/routing";
+import { Collection } from "@hypervit/collection";
+import {
+  NotFoundController,
+  ServerErrorController,
+} from "@hypervit/controller";
+import { Directory } from "@hypervit/directory";
+import { print } from "@hypervit/exception";
+import { Server } from "@hypervit/http";
+import { get, Keys, registerConstant } from "@hypervit/ioc";
+import { Kernel } from "@hypervit/kernel";
+import { IRoute, Router } from "@hypervit/routing";
 
 try {
-  await Kernel.boot({
+  Kernel.boot({
     app: config,
     type: "view",
     rootDir: new URL(".", import.meta.url).pathname.replace(/\/+$/, ""),

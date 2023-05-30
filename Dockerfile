@@ -6,3 +6,14 @@ RUN echo "#! /bin/sh" > build.sh
 RUN echo "npx tailwindcss -o ./public/dist/main.css -m" >> build.sh
 RUN echo "#! /bin/sh" > watch.sh
 RUN echo "npx tailwindcss -i ./public/main.css -o ./public/dist/main.css --watch" >> watch.sh
+
+RUN echo -e "module.exports = {\
+  plugins: {\n\
+    'postcss-import': {},\n\
+    'tailwindcss/nesting': 'postcss-nesting',\n\
+    'tailwindcss': {},\n\
+    'autoprefixer': {},\n\
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {}),\n\
+  },\n\
+};\n\
+" > postcss.config.js

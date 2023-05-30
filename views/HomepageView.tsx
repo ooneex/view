@@ -1,5 +1,5 @@
-import { getIsland, Island } from "@ooneex/island";
-import { asset, Body, Head, Page } from "@ooneex/view";
+import { getIsland, Island } from "@hypervit/island";
+import { asset, Body, Head, Page } from "@hypervit/view";
 
 export interface IHomepageViewProps {
   message: string;
@@ -13,7 +13,7 @@ export const HomepageView = ({ message }: IHomepageViewProps) => {
       <Head title="Homepage" styles={[asset("dist/main.css")]} />
       <Body>
         <h1>HomepageView</h1>
-        <Island config={island} data={{ key: 0, value: { message } }}>
+        <Island config={island} data={{ key: "0", value: { message } }}>
           Loading...
         </Island>
       </Body>

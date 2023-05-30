@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  ooneex_view_assets:
+  hypervit_view_assets:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: ooneex/view/assets
-    container_name: ooneex_view_assets
+    image: hypervit/view/assets
+    container_name: hypervit_view_assets
     working_dir: /home/node/app
     volumes:
       - ./components:/home/node/app/components

@@ -1,6 +1,6 @@
-import { Route } from "@ooneex/decorator";
-import type { IRequest } from "@ooneex/http";
-import { Response as HttpResponse } from "@ooneex/http";
+import { Route } from "@hypervit/decorator";
+import type { IRequest } from "@hypervit/http";
+import { Response as HttpResponse } from "@hypervit/http";
 import { HomepageView, IHomepageViewProps } from "@views";
 
 export class HomepageController {
