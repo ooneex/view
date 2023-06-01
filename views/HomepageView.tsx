@@ -10,7 +10,7 @@ const island = await getIsland("ShowMessage");
 export const HomepageView = ({ message }: IHomepageViewProps) => {
   return (
     <Page className={"bg-secondary text-primary"}>
-      <Head title="Homepage" styles={[asset("dist/main.css")]} />
+      <Head title="Homepage" />
       <Body>
         <h1>HomepageView</h1>
         <Island config={island} data={{ key: "0", value: { message } }}>

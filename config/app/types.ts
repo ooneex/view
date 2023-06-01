@@ -11,4 +11,8 @@ export type AppDirectoryType = {
 
 export type AppConfigType = {
   readonly directories: AppDirectoryType;
+  readonly assets?: {
+    readonly styles?: string[];
+    readonly scripts?: string[];
+  };
 };

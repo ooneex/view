@@ -11,4 +11,7 @@ export const config: AppConfigType = {
     "var": "var",
     "views": "views",
   },
+  assets: {
+    styles: ["dist/main.css"],
+  },
 };
