@@ -1,13 +1,10 @@
 import { config } from "@config/app";
 import { Collection } from "@hypervit/collection";
-import {
-  NotFoundController,
-  ServerErrorController,
-} from "@hypervit/controller";
-import { Directory } from "@hypervit/directory";
+import { loadControllers } from "@hypervit/controller";
 import { print } from "@hypervit/exception";
 import { Server } from "@hypervit/http";
 import { get, Keys, registerConstant } from "@hypervit/ioc";
+import { compileIslands } from "@hypervit/island";
 import { Kernel } from "@hypervit/kernel";
 import { IRoute, Router } from "@hypervit/routing";
 
@@ -18,16 +15,7 @@ try {
     rootDir: new URL(".", import.meta.url).pathname.replace(/\/+$/, ""),
   });
 
-  // Load default NotFoundController
-  new NotFoundController();
-
-  // Load default ServerErrorController
-  new ServerErrorController();
-
-  // Load all app controllers
-  const controllerDir = config.directories.controllers;
-  const directory = new Directory(controllerDir);
-  const controllers = directory.files(/Controller\.ts$/, true);
+  const controllers = loadControllers(config.directories.controllers);
 
   for (const controller of controllers) {
     const name = controller.getName();
@@ -37,6 +25,8 @@ try {
 
   const routes = get<Collection<string, IRoute>>(Keys.Routes);
   registerConstant(Keys.Router, new Router(routes));
+
+  await compileIslands();
 } catch (e) {
   print(e);
   Deno.exit(1);

@@ -1,5 +1,7 @@
 import { AppConfigType } from "./types.ts";
 
+// TODO: assets key added. Check zod schema
+
 export const config: AppConfigType = {
   directories: {
     "components": "components",

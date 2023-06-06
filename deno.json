@@ -3,6 +3,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "emitDecoratorMetadata": true,
+    "strict": true,
+    "nodeModulesDir": true,
+    "lock": false,
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,28 +16,28 @@
   },
   "imports": {
     "@config/": "./config/",
-    "@islands/": "./islands/",
     "@config/app": "./config/app/mod.ts",
-    "@views": "./views/mod.ts",
     "@controllers/": "./controllers/",
+    "@islands/": "./islands/",
+    "@views": "./views/mod.ts",
 
-    "@hypervit/collection": "/Volumes/Projects/MataCapital/Hypervit/Core/Collection/mod.ts",
-    "@hypervit/config": "/Volumes/Projects/MataCapital/Hypervit/Core/Config/mod.ts",
-    "@hypervit/controller": "/Volumes/Projects/MataCapital/Hypervit/Core/Controller/mod.ts",
-    "@hypervit/decorator": "/Volumes/Projects/MataCapital/Hypervit/Core/Decorator/mod.ts",
-    "@hypervit/directory": "/Volumes/Projects/MataCapital/Hypervit/Core/Directory/mod.ts",
-    "@hypervit/env": "/Volumes/Projects/MataCapital/Hypervit/Core/Env/mod.ts",
-    "@hypervit/exception": "/Volumes/Projects/MataCapital/Hypervit/Core/Exception/mod.ts",
-    "@hypervit/file": "/Volumes/Projects/MataCapital/Hypervit/Core/File/mod.ts",
-    "@hypervit/helper": "/Volumes/Projects/MataCapital/Hypervit/Core/Helper/mod.ts",
-    "@hypervit/http": "/Volumes/Projects/MataCapital/Hypervit/Core/Http/mod.ts",
-    "@hypervit/ioc": "/Volumes/Projects/MataCapital/Hypervit/Core/Ioc/mod.ts",
-    "@hypervit/island": "/Volumes/Projects/MataCapital/Hypervit/Core/Island/mod.ts",
-    "@hypervit/kernel": "/Volumes/Projects/MataCapital/Hypervit/Core/Kernel/mod.ts",
-    "@hypervit/output": "/Volumes/Projects/MataCapital/Hypervit/Core/Output/mod.ts",
-    "@hypervit/path": "/Volumes/Projects/MataCapital/Hypervit/Core/Path/mod.ts",
-    "@hypervit/routing": "/Volumes/Projects/MataCapital/Hypervit/Core/Routing/mod.ts",
-    "@hypervit/view": "/Volumes/Projects/MataCapital/Hypervit/Core/View/mod.ts",
+    "@hypervit/collection": "https://deno.land/x/hypervit@0.0.15-beta-2/Collection/mod.ts",
+    "@hypervit/config": "https://deno.land/x/hypervit@0.0.15-beta-2/Config/mod.ts",
+    "@hypervit/controller": "https://deno.land/x/hypervit@0.0.15-beta-2/Controller/mod.ts",
+    "@hypervit/decorator": "https://deno.land/x/hypervit@0.0.15-beta-2/Decorator/mod.ts",
+    "@hypervit/directory": "https://deno.land/x/hypervit@0.0.15-beta-2/Directory/mod.ts",
+    "@hypervit/env": "https://deno.land/x/hypervit@0.0.15-beta-2/Env/mod.ts",
+    "@hypervit/exception": "https://deno.land/x/hypervit@0.0.15-beta-2/Exception/mod.ts",
+    "@hypervit/file": "https://deno.land/x/hypervit@0.0.15-beta-2/File/mod.ts",
+    "@hypervit/helper": "https://deno.land/x/hypervit@0.0.15-beta-2/Helper/mod.ts",
+    "@hypervit/http": "https://deno.land/x/hypervit@0.0.15-beta-2/Http/mod.ts",
+    "@hypervit/ioc": "https://deno.land/x/hypervit@0.0.15-beta-2/Ioc/mod.ts",
+    "@hypervit/island": "https://deno.land/x/hypervit@0.0.15-beta-2/Island/mod.ts",
+    "@hypervit/kernel": "https://deno.land/x/hypervit@0.0.15-beta-2/Kernel/mod.ts",
+    "@hypervit/output": "https://deno.land/x/hypervit@0.0.15-beta-2/Output/mod.ts",
+    "@hypervit/path": "https://deno.land/x/hypervit@0.0.15-beta-2/Path/mod.ts",
+    "@hypervit/routing": "https://deno.land/x/hypervit@0.0.15-beta-2/Routing/mod.ts",
+    "@hypervit/view": "https://deno.land/x/hypervit@0.0.15-beta-2/View/mod.ts",
 
     "testing/": "https://deno.land/std@0.182.0/testing/",
     "preact": "https://esm.sh/preact@10.13.2",
@@ -43,7 +46,7 @@
     "solid-js/web": "https://cdn.skypack.dev/solid-js/web"
   },
   "tasks": {
-    "start": "deno run -A --watch=.env,.env.local,config/,controllers/,middlewares/,islands/ index.ts",
+    "start": "deno run -A --watch=.env,.env.local,config/,controllers/,middlewares/ index.ts",
     "assets:watch": "docker-compose run --rm hypervit_view_assets sh ./watch.sh",
     "assets:build": "docker-compose run --rm hypervit_view_assets sh ./build.sh",
     "assets:sh": "docker-compose run --rm hypervit_view_assets sh",
@@ -52,5 +55,18 @@
     "fmt": "deno fmt",
     "lint": "deno fmt --check && deno lint"
   },
-  "nodeModulesDir": true
+  "lint": {
+    "exclude": [
+      "node_modules",
+      "public/dist/",
+      "var"
+    ]
+  },
+  "fmt": {
+    "exclude": [
+      "node_modules",
+      "public/dist",
+      "var"
+    ]
+  }
 }

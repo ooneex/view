@@ -4,5 +4,4 @@ var/*
 deno.lock
 public/dist
 public/assets
-public/islands
-public/manifest.json
+node_modules
