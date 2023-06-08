@@ -4,8 +4,6 @@
     "jsxImportSource": "preact",
     "emitDecoratorMetadata": true,
     "strict": true,
-    "nodeModulesDir": true,
-    "lock": false,
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,31 +13,36 @@
     ]
   },
   "imports": {
+    "@components/": "./components/",
     "@config/": "./config/",
     "@config/app": "./config/app/mod.ts",
     "@controllers/": "./controllers/",
     "@islands/": "./islands/",
-    "@views": "./views/mod.ts",
+    "@public/": "./public/",
+    "@tests/": "./tests/",
+    "@var/": "./var/",
+    "@views/": "./views/",
 
-    "@hypervit/collection": "https://deno.land/x/hypervit@0.0.15-beta-2/Collection/mod.ts",
-    "@hypervit/config": "https://deno.land/x/hypervit@0.0.15-beta-2/Config/mod.ts",
-    "@hypervit/controller": "https://deno.land/x/hypervit@0.0.15-beta-2/Controller/mod.ts",
-    "@hypervit/decorator": "https://deno.land/x/hypervit@0.0.15-beta-2/Decorator/mod.ts",
-    "@hypervit/directory": "https://deno.land/x/hypervit@0.0.15-beta-2/Directory/mod.ts",
-    "@hypervit/env": "https://deno.land/x/hypervit@0.0.15-beta-2/Env/mod.ts",
-    "@hypervit/exception": "https://deno.land/x/hypervit@0.0.15-beta-2/Exception/mod.ts",
-    "@hypervit/file": "https://deno.land/x/hypervit@0.0.15-beta-2/File/mod.ts",
-    "@hypervit/helper": "https://deno.land/x/hypervit@0.0.15-beta-2/Helper/mod.ts",
-    "@hypervit/http": "https://deno.land/x/hypervit@0.0.15-beta-2/Http/mod.ts",
-    "@hypervit/ioc": "https://deno.land/x/hypervit@0.0.15-beta-2/Ioc/mod.ts",
-    "@hypervit/island": "https://deno.land/x/hypervit@0.0.15-beta-2/Island/mod.ts",
-    "@hypervit/kernel": "https://deno.land/x/hypervit@0.0.15-beta-2/Kernel/mod.ts",
-    "@hypervit/output": "https://deno.land/x/hypervit@0.0.15-beta-2/Output/mod.ts",
-    "@hypervit/path": "https://deno.land/x/hypervit@0.0.15-beta-2/Path/mod.ts",
-    "@hypervit/routing": "https://deno.land/x/hypervit@0.0.15-beta-2/Routing/mod.ts",
-    "@hypervit/view": "https://deno.land/x/hypervit@0.0.15-beta-2/View/mod.ts",
+    "@hypervit/collection": "https://deno.land/x/hypervit@0.0.19/Collection/mod.ts",
+    "@hypervit/config": "https://deno.land/x/hypervit@0.0.19/Config/mod.ts",
+    "@hypervit/controller": "https://deno.land/x/hypervit@0.0.19/Controller/mod.ts",
+    "@hypervit/decorator": "https://deno.land/x/hypervit@0.0.19/Decorator/mod.ts",
+    "@hypervit/directory": "https://deno.land/x/hypervit@0.0.19/Directory/mod.ts",
+    "@hypervit/env": "https://deno.land/x/hypervit@0.0.19/Env/mod.ts",
+    "@hypervit/exception": "https://deno.land/x/hypervit@0.0.19/Exception/mod.ts",
+    "@hypervit/file": "https://deno.land/x/hypervit@0.0.19/File/mod.ts",
+    "@hypervit/helper": "https://deno.land/x/hypervit@0.0.19/Helper/mod.ts",
+    "@hypervit/http": "https://deno.land/x/hypervit@0.0.19/Http/mod.ts",
+    "@hypervit/ioc": "https://deno.land/x/hypervit@0.0.19/Ioc/mod.ts",
+    "@hypervit/island": "https://deno.land/x/hypervit@0.0.19/Island/mod.ts",
+    "@hypervit/kernel": "https://deno.land/x/hypervit@0.0.19/Kernel/mod.ts",
+    "@hypervit/output": "https://deno.land/x/hypervit@0.0.19/Output/mod.ts",
+    "@hypervit/path": "https://deno.land/x/hypervit@0.0.19/Path/mod.ts",
+    "@hypervit/routing": "https://deno.land/x/hypervit@0.0.19/Routing/mod.ts",
+    "@hypervit/testing": "https://deno.land/x/hypervit@0.0.19/Testing/mod.ts",
+    "@hypervit/view": "https://deno.land/x/hypervit@0.0.19/View/mod.ts",
 
-    "testing/": "https://deno.land/std@0.182.0/testing/",
+    "dom": "https://deno.land/x/deno_dom@v0.1.38/deno-dom-wasm.ts",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/preact@10.13.2/",
     "solid-js": "https://cdn.skypack.dev/solid-js",
@@ -53,7 +56,12 @@
     "test": "deno test -A",
     "test:watch": "deno test -A --watch",
     "fmt": "deno fmt",
-    "lint": "deno fmt --check && deno lint"
+    "lint": "deno fmt --check && deno lint",
+    "cache": "deno cache ./**/*.ts",
+    "make:component": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts make:component",
+    "make:controller": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:controller",
+    "make:island": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:island",
+    "make:view": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:view"
   },
   "lint": {
     "exclude": [
@@ -68,5 +76,7 @@
       "public/dist",
       "var"
     ]
-  }
+  },
+  "lock": false,
+  "nodeModulesDir": true
 }

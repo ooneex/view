@@ -1,0 +1,13 @@
+type: "view"
+directories:
+  components: "components"
+  config: "config"
+  controllers: "controllers"
+  islands: "islands"
+  public: "public"
+  var: "var"
+  views: "views"
+  root: "../.."
+assets:
+  styles:
+    - "dist/main.css"
