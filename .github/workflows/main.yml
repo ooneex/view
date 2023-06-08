@@ -21,6 +21,8 @@ jobs:
         uses: denoland/setup-deno@9db7f66e8e16b5699a514448ce994936c63f0d54
         with:
           deno-version: v1.x
+      - name: Create global style file
+        run: mkdir -p public/dist && touch public/dist/main.css
       - name: Run tests
         run: deno test -A
 

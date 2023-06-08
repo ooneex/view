@@ -57,7 +57,7 @@
     "test:watch": "deno test -A --watch",
     "fmt": "deno fmt",
     "lint": "deno fmt --check && deno lint",
-    "cache": "deno cache ./**/*.ts",
+    "cache:reload": "deno cache --reload ./**/*.ts",
     "make:component": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts make:component",
     "make:controller": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:controller",
     "make:island": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:island",
