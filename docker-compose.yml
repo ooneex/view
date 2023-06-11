@@ -12,4 +12,4 @@ services:
       - ./islands:/home/node/app/islands
       - ./public:/home/node/app/public
       - ./views:/home/node/app/views
-      - ./tailwind.config.js:/home/node/app/tailwind.config.js
+      - ./config/tailwind/tailwind.config.ts:/home/node/app/tailwind.config.ts
