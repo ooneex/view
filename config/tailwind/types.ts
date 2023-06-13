@@ -1,21 +1,4 @@
-export type HexCharType =
-  | "A"
-  | "B"
-  | "C"
-  | "D"
-  | "E"
-  | "F"
-  | "0"
-  | "9"
-  | "8"
-  | "7"
-  | "6"
-  | "5"
-  | "4"
-  | "3"
-  | "2"
-  | "1";
-export type ColorKeyType =
+export type VariantKeyType =
   | "100"
   | "200"
   | "300"
@@ -26,9 +9,9 @@ export type ColorKeyType =
   | "800"
   | "DEFAULT";
 
-export type ColorValueType = `#${HexCharType}`;
+export type ColorValueType = `#${string}`;
 
-export type ColorType = Record<ColorKeyType, `#${string}`>;
+export type ColorType = Record<VariantKeyType, ColorValueType>;
 
 export type ConfigType = {
   content: string[];
@@ -47,18 +30,26 @@ export type ConfigType = {
     borderWidth: {
       DEFAULT: `${number}px`;
       "0": "0";
-      "none": "none";
+      "1": `${number}px`;
       "2": `${number}px`;
       "3": `${number}px`;
       "4": `${number}px`;
       "6": `${number}px`;
     };
     borderRadius: {
-      "none": "0";
+      none: "0";
       DEFAULT: `${number}px`;
-      "md": `${number}px`;
-      "lg": `${number}px`;
-      "full": "50%";
+      md: `${number}px`;
+      lg: `${number}px`;
+      full: "50%";
+    };
+    dropShadow: {
+      none: "none";
+      sm: `0 ${number}px ${number}px 0 #B9ACBF`;
+      md: `0 ${number}px ${number}px 0 #B9ACBF`;
+      DEFAULT: `0 ${number}px ${number}px 0 #B9ACBF`;
+      lg: `0 ${number}px ${number}px 0 #B9ACBF`;
+      xl: `0 ${number}px ${number}px 0 #B9ACBF`;
     };
   };
 };

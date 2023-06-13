@@ -49,7 +49,7 @@
     "solid-js/web": "https://cdn.skypack.dev/solid-js/web"
   },
   "tasks": {
-    "start": "deno run -A --watch=.env,.env.local,config/,controllers/ index.ts",
+    "start": "deno task cache && deno run -A --watch=.env,.env.local,config/,controllers/ index.ts",
     "assets:watch": "docker-compose run --rm hypervit_view_assets sh ./watch.sh",
     "assets:build": "docker-compose run --rm hypervit_view_assets sh ./build.sh",
     "assets:sh": "docker-compose run --rm hypervit_view_assets sh",
@@ -57,11 +57,12 @@
     "test:watch": "deno test -A --watch",
     "fmt": "deno fmt",
     "lint": "deno fmt --check && deno lint",
+    "cache": "deno cache ./**/*.ts",
     "cache:reload": "deno cache --reload ./**/*.ts",
-    "make:component": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts make:component",
-    "make:controller": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:controller",
-    "make:island": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:island",
-    "make:view": "deno run -A https://deno.land/x/ooneex@0.0.15/ooneex.ts/ooneex.ts make:view"
+    "make:component": "deno run -A https://deno.land/x/ooneex@0.0.16/ooneex.ts make:component",
+    "make:controller": "deno run -A https://deno.land/x/ooneex@0.0.16/ooneex.ts make:controller",
+    "make:island": "deno run -A https://deno.land/x/ooneex@0.0.16/ooneex.ts make:island",
+    "make:view": "deno run -A https://deno.land/x/ooneex@0.0.16/ooneex.ts make:view"
   },
   "lint": {
     "exclude": [
