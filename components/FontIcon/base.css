@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "ooneex";
+  src: url("./fonts/ooneex.eot");
+  src: url("./fonts/ooneex.eot") format("embedded-opentype"),
+    url("./fonts/ooneex.woff2") format("woff2"),
+    url("./fonts/ooneex.woff") format("woff"),
+    url("./fonts/ooneex.ttf") format("truetype"),
+    url("./fonts/ooneex.svg") format("svg");
+}
+
+.ooneex-icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 "ooneex";
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ooneex-icon-size-xs {
+  font-size: 0.75em;
+}
+
+.ooneex-icon-size-s {
+  font-size: 1em;
+}
+
+.ooneex-icon-size-m {
+  font-size: 1.25em;
+}
+
+.ooneex-icon-size-l {
+  font-size: 1.5em;
+}
+
+.ooneex-icon-size-xl {
+  font-size: 2em;
+}
+
+.ooneex-icon-size-2xl {
+  font-size: 2.5em;
+}
+
+.ooneex-icon-size-3xl {
+  font-size: 3em;
+}

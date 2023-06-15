@@ -248,23 +248,23 @@ describe("Container component", () => {
         const p = dom.querySelector("div")!;
         assertEquals(p.classList.contains("rounded"), true);
       });
-      it("lg", () => {
+      it("l", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { all: "lg" },
+          radius: { all: "l" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-lg"), true);
+        assertEquals(p.classList.contains("rounded-l"), true);
       });
-      it("md", () => {
+      it("m", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { all: "md" },
+          radius: { all: "m" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-md"), true);
+        assertEquals(p.classList.contains("rounded-m"), true);
       });
     });
     describe("top", () => {
@@ -277,23 +277,23 @@ describe("Container component", () => {
         const p = dom.querySelector("div")!;
         assertEquals(p.classList.contains("rounded-t"), true);
       });
-      it("lg", () => {
+      it("l", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { top: "lg" },
+          radius: { top: "l" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-t-lg"), true);
+        assertEquals(p.classList.contains("rounded-t-l"), true);
       });
-      it("md", () => {
+      it("m", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { top: "md" },
+          radius: { top: "m" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-t-md"), true);
+        assertEquals(p.classList.contains("rounded-t-m"), true);
       });
     });
     describe("right", () => {
@@ -306,23 +306,23 @@ describe("Container component", () => {
         const p = dom.querySelector("div")!;
         assertEquals(p.classList.contains("rounded-r"), true);
       });
-      it("lg", () => {
+      it("l", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { right: "lg" },
+          radius: { right: "l" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-r-lg"), true);
+        assertEquals(p.classList.contains("rounded-r-l"), true);
       });
-      it("md", () => {
+      it("m", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { right: "md" },
+          radius: { right: "m" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-r-md"), true);
+        assertEquals(p.classList.contains("rounded-r-m"), true);
       });
     });
     describe("bottom", () => {
@@ -335,23 +335,23 @@ describe("Container component", () => {
         const p = dom.querySelector("div")!;
         assertEquals(p.classList.contains("rounded-b"), true);
       });
-      it("lg", () => {
+      it("l", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { bottom: "lg" },
+          radius: { bottom: "l" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-b-lg"), true);
+        assertEquals(p.classList.contains("rounded-b-l"), true);
       });
-      it("md", () => {
+      it("m", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { bottom: "md" },
+          radius: { bottom: "m" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-b-md"), true);
+        assertEquals(p.classList.contains("rounded-b-m"), true);
       });
     });
     describe("left", () => {
@@ -364,23 +364,23 @@ describe("Container component", () => {
         const p = dom.querySelector("div")!;
         assertEquals(p.classList.contains("rounded-l"), true);
       });
-      it("lg", () => {
+      it("l", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { left: "lg" },
+          radius: { left: "l" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l-lg"), true);
+        assertEquals(p.classList.contains("rounded-l-l"), true);
       });
-      it("md", () => {
+      it("m", () => {
         const content = renderView<ContainerPropsType>(Container, {
-          radius: { left: "md" },
+          radius: { left: "m" },
         });
 
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l-md"), true);
+        assertEquals(p.classList.contains("rounded-l-m"), true);
       });
     });
   });
@@ -395,23 +395,23 @@ describe("Container component", () => {
       const p = dom.querySelector("div")!;
       assertEquals(p.classList.contains("drop-shadow-none"), true);
     });
-    it("sm", () => {
+    it("s", () => {
       const content = renderView<ContainerPropsType>(Container, {
-        shadow: "sm",
+        shadow: "s",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
       const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-sm"), true);
+      assertEquals(p.classList.contains("drop-shadow-s"), true);
     });
-    it("md", () => {
+    it("m", () => {
       const content = renderView<ContainerPropsType>(Container, {
-        shadow: "md",
+        shadow: "m",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
       const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-md"), true);
+      assertEquals(p.classList.contains("drop-shadow-m"), true);
     });
     it("DEFAULT", () => {
       const content = renderView<ContainerPropsType>(Container, {
@@ -422,14 +422,14 @@ describe("Container component", () => {
       const p = dom.querySelector("div")!;
       assertEquals(p.classList.contains("drop-shadow"), true);
     });
-    it("lg", () => {
+    it("l", () => {
       const content = renderView<ContainerPropsType>(Container, {
-        shadow: "lg",
+        shadow: "l",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
       const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-lg"), true);
+      assertEquals(p.classList.contains("drop-shadow-l"), true);
     });
     it("xl", () => {
       const content = renderView<ContainerPropsType>(Container, {

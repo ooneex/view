@@ -39,16 +39,16 @@ export type ConfigType = {
     borderRadius: {
       none: "0";
       DEFAULT: `${number}px`;
-      md: `${number}px`;
-      lg: `${number}px`;
+      m: `${number}px`;
+      l: `${number}px`;
       full: "50%";
     };
     dropShadow: {
       none: "none";
-      sm: `0 ${number}px ${number}px 0 #B9ACBF`;
-      md: `0 ${number}px ${number}px 0 #B9ACBF`;
+      s: `0 ${number}px ${number}px 0 #B9ACBF`;
+      m: `0 ${number}px ${number}px 0 #B9ACBF`;
       DEFAULT: `0 ${number}px ${number}px 0 #B9ACBF`;
-      lg: `0 ${number}px ${number}px 0 #B9ACBF`;
+      l: `0 ${number}px ${number}px 0 #B9ACBF`;
       xl: `0 ${number}px ${number}px 0 #B9ACBF`;
     };
   };

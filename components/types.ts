@@ -28,7 +28,7 @@ export type RadiusCornerType = "all" | "top" | "right" | "bottom" | "left";
 export type RadiusType =
   | "full"
   | "none"
-  | Partial<Record<RadiusCornerType, "DEFAULT" | "lg" | "md">>;
+  | Partial<Record<RadiusCornerType, "DEFAULT" | "m" | "l">>;
 
 export type BorderSizeType =
   | "0"
@@ -48,6 +48,6 @@ export type SizeType =
   | "xl"
   | "2xl";
 
-export type ShadowType = "none" | "sm" | "md" | "DEFAULT" | "lg" | "xl";
+export type ShadowType = "none" | "s" | "m" | "DEFAULT" | "l" | "xl";
 
 export type BreakpointType = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
