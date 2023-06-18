@@ -12,7 +12,7 @@ export type VariantType =
   | "success"
   | "warning";
 
-export type VariantKeyType =
+export type VariantOpacityType =
   | "100"
   | "200"
   | "300"
@@ -21,14 +21,14 @@ export type VariantKeyType =
   | "600"
   | "700"
   | "800"
-  | "DEFAULT";
+  | "900";
 
 export type RadiusCornerType = "all" | "top" | "right" | "bottom" | "left";
 
 export type RadiusType =
   | "full"
   | "none"
-  | Partial<Record<RadiusCornerType, "DEFAULT" | "m" | "l">>;
+  | Partial<Record<RadiusCornerType, "xs" | "s" | "m" | "l">>;
 
 export type BorderSizeType =
   | "0"
@@ -36,18 +36,30 @@ export type BorderSizeType =
   | "2"
   | "3"
   | "4"
-  | "6"
-  | "DEFAULT";
+  | "6";
+
+export type FontTypeType =
+  | "light"
+  | "light-italic"
+  | "regular"
+  | "italic"
+  | "medium"
+  | "medium-italic"
+  | "semi-bold"
+  | "semi-bold-italic"
+  | "bold"
+  | "bold-italic";
 
 export type SizeType =
   | "xs"
   | "s"
   | "m"
-  | "DEFAULT"
   | "l"
   | "xl"
-  | "2xl";
+  | "2xl"
+  | "3xl"
+  | "4xl";
 
-export type ShadowType = "none" | "s" | "m" | "DEFAULT" | "l" | "xl";
+export type ShadowType = "none" | "xs" | "s" | "m" | "l" | "xl";
 
 export type BreakpointType = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";

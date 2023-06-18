@@ -1,8 +1,34 @@
-import { assertEquals, describe, it } from "@hypervit/testing";
+// deno-lint-ignore-file no-explicit-any
+
+import { assert, assertEquals, describe, it } from "@hypervit/testing";
 import { renderView } from "@hypervit/view";
 import "@tests/setup.ts";
 import { DOMParser } from "dom";
+import { BorderSizeType, ShadowType, VariantType } from "../types.ts";
 import { Container, ContainerPropsType } from "./mod.ts";
+
+const variants = [
+  "primary",
+  "secondary",
+  "error",
+  "warning",
+  "info",
+  "success",
+  "dark",
+  "light",
+];
+
+const opacities = [
+  "100",
+  "200",
+  "300",
+  "400",
+  "500",
+  "600",
+  "700",
+  "800",
+  "900",
+];
 
 describe("Container component", () => {
   describe("border", () => {
@@ -10,211 +36,53 @@ describe("Container component", () => {
       const content = renderView<ContainerPropsType>(Container);
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.length, 0);
+      const div = dom.querySelector("div")!;
+      assertEquals(div.classList.contains("border-0"), true);
     });
     describe("variant", () => {
-      describe("primary", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "primary" },
+      for (const variant of variants) {
+        describe(variant, () => {
+          it("normal", () => {
+            const content = renderView<ContainerPropsType>(Container, {
+              border: { variant: variant as VariantType },
+              children: "",
+            });
+            const dom = new DOMParser().parseFromString(content, "text/html")!;
+            const div = dom.querySelector("div")!;
+            assertEquals(div.classList.contains(`border-${variant}`), true);
           });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-primary"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "primary", type: "light" },
+          it("light", () => {
+            const content = renderView<ContainerPropsType>(Container, {
+              border: { variant: variant as VariantType, type: "light" },
+              children: "",
+            });
+            const dom = new DOMParser().parseFromString(content, "text/html")!;
+            const div = dom.querySelector("div")!;
+            assertEquals(div.classList.contains(`border-${variant}-400`), true);
           });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-primary-400"), true);
         });
-      });
-      describe("secondary", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "secondary" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-secondary"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "secondary", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-secondary-400"), true);
-        });
-      });
-      describe("error", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "error" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-error"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "error", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-error-400"), true);
-        });
-      });
-      describe("warning", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "warning" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-warning"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "warning", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-warning-400"), true);
-        });
-      });
-      describe("info", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "info" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-info"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "info", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-info-400"), true);
-        });
-      });
-      describe("success", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "success" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-success"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "success", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-success-400"), true);
-        });
-      });
-      describe("dark", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "dark" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-dark"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "dark", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-dark-400"), true);
-        });
-      });
-      describe("light", () => {
-        it("normal", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-light"), true);
-        });
-        it("light", () => {
-          const content = renderView<ContainerPropsType>(Container, {
-            border: { variant: "light", type: "light" },
-          });
-          const dom = new DOMParser().parseFromString(content, "text/html")!;
-          const p = dom.querySelector("div")!;
-          assertEquals(p.classList.contains("border-light-400"), true);
-        });
-      });
+      }
     });
     describe("size", () => {
-      it("0", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "0" },
+      for (const size of [0, 1, 2, 3, 4, 6]) {
+        it(`${size}`, () => {
+          const content = renderView<ContainerPropsType>(Container, {
+            border: { variant: "primary", size: `${size}` as BorderSizeType },
+            children: "",
+          });
+          const dom = new DOMParser().parseFromString(content, "text/html")!;
+          const div = dom.querySelector("div")!;
+          assertEquals(div.classList.contains(`border-${size}`), true);
         });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-0"), true);
-      });
-      it("1", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "1" },
-        });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-1"), true);
-      });
-      it("2", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "2" },
-        });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-2"), true);
-      });
-      it("3", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "3" },
-        });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-3"), true);
-      });
-      it("4", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "4" },
-        });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-4"), true);
-      });
-      it("6", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          border: { variant: "primary", size: "6" },
-        });
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-6"), true);
-      });
-      it("DEFAULT", () => {
+      }
+      it("default", () => {
         const content = renderView<ContainerPropsType>(Container, {
           border: { variant: "primary" },
+          children: "",
         });
         const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("border-1"), true);
+        const div = dom.querySelector("div")!;
+        assertEquals(div.classList.contains("border-1"), true);
       });
     });
   });
@@ -223,316 +91,140 @@ describe("Container component", () => {
     it("full", () => {
       const content = renderView<ContainerPropsType>(Container, {
         radius: "full",
+        children: "",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("rounded-full"), true);
+      const div = dom.querySelector("div")!;
+      assertEquals(div.classList.contains("rounded-full"), true);
     });
     it("none", () => {
       const content = renderView<ContainerPropsType>(Container, {
         radius: "none",
+        children: "",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("rounded-none"), true);
+      const div = dom.querySelector("div")!;
+      assertEquals(div.classList.contains("rounded-none"), true);
     });
-    describe("all", () => {
-      it("DEFAULT", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { all: "DEFAULT" },
-        });
 
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded"), true);
-      });
-      it("l", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { all: "l" },
-        });
+    for (
+      const [position, ext] of [["all", ""], ["top", "t-"], ["right", "r-"], [
+        "bottom",
+        "b-",
+      ], ["left", "l-"]]
+    ) {
+      describe(position, () => {
+        for (const radius of ["xs", "s", "m", "l"]) {
+          it(radius, () => {
+            const content = renderView<ContainerPropsType>(Container, {
+              radius: { [position]: radius as any },
+              children: "",
+            });
 
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l"), true);
+            const dom = new DOMParser().parseFromString(content, "text/html")!;
+            const div = dom.querySelector("div")!;
+            assertEquals(
+              div.classList.contains(`rounded-${ext}${radius}`),
+              true,
+            );
+          });
+        }
       });
-      it("m", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { all: "m" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-m"), true);
-      });
-    });
-    describe("top", () => {
-      it("DEFAULT", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { top: "DEFAULT" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-t"), true);
-      });
-      it("l", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { top: "l" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-t-l"), true);
-      });
-      it("m", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { top: "m" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-t-m"), true);
-      });
-    });
-    describe("right", () => {
-      it("DEFAULT", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { right: "DEFAULT" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-r"), true);
-      });
-      it("l", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { right: "l" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-r-l"), true);
-      });
-      it("m", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { right: "m" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-r-m"), true);
-      });
-    });
-    describe("bottom", () => {
-      it("DEFAULT", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { bottom: "DEFAULT" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-b"), true);
-      });
-      it("l", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { bottom: "l" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-b-l"), true);
-      });
-      it("m", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { bottom: "m" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-b-m"), true);
-      });
-    });
-    describe("left", () => {
-      it("DEFAULT", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { left: "DEFAULT" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l"), true);
-      });
-      it("l", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { left: "l" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l-l"), true);
-      });
-      it("m", () => {
-        const content = renderView<ContainerPropsType>(Container, {
-          radius: { left: "m" },
-        });
-
-        const dom = new DOMParser().parseFromString(content, "text/html")!;
-        const p = dom.querySelector("div")!;
-        assertEquals(p.classList.contains("rounded-l-m"), true);
-      });
-    });
+    }
   });
 
   describe("shadow", () => {
-    it("none", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "none",
-      });
+    for (const shadow of ["none", "xs", "s", "m", "l", "xl"]) {
+      it(shadow, () => {
+        const content = renderView<ContainerPropsType>(Container, {
+          shadow: shadow as ShadowType,
+          children: "",
+        });
 
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-none"), true);
-    });
-    it("s", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "s",
+        const dom = new DOMParser().parseFromString(content, "text/html")!;
+        const div = dom.querySelector("div")!;
+        assertEquals(div.classList.contains(`drop-shadow-${shadow}`), true);
       });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-s"), true);
-    });
-    it("m", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "m",
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-m"), true);
-    });
-    it("DEFAULT", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "DEFAULT",
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow"), true);
-    });
-    it("l", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "l",
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-l"), true);
-    });
-    it("xl", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        shadow: "xl",
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("drop-shadow-xl"), true);
-    });
+    }
   });
 
   describe("bgc", () => {
     it("none", () => {
       const content = renderView<ContainerPropsType>(Container, {
         bgc: "none",
+        children: "",
       });
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-none"), true);
+      const div = dom.querySelector("div")!;
+      assertEquals(div.classList.contains("bg-none"), true);
     });
-    it("primary", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { primary: "100" },
-      });
 
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-primary-100"), true);
-    });
-    it("secondary", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { secondary: "100" },
-      });
+    for (const variant of variants) {
+      describe(variant, () => {
+        for (const opacity of opacities) {
+          it(opacity, () => {
+            const content = renderView<ContainerPropsType>(Container, {
+              bgc: { [variant]: opacity },
+              children: "",
+            });
 
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-secondary-100"), true);
-    });
-    it("error", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { error: "100" },
+            const dom = new DOMParser().parseFromString(content, "text/html")!;
+            const div = dom.querySelector("div")!;
+            assertEquals(
+              div.classList.contains(`bg-${variant}-${opacity}`),
+              true,
+            );
+          });
+        }
       });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-error-100"), true);
-    });
-    it("warning", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { warning: "100" },
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-warning-100"), true);
-    });
-    it("info", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { info: "100" },
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-info-100"), true);
-    });
-    it("success", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { success: "100" },
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-success-100"), true);
-    });
-    it("dark", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { dark: "100" },
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-dark-100"), true);
-    });
-    it("light", () => {
-      const content = renderView<ContainerPropsType>(Container, {
-        bgc: { light: "100" },
-      });
-
-      const dom = new DOMParser().parseFromString(content, "text/html")!;
-      const p = dom.querySelector("div")!;
-      assertEquals(p.classList.contains("bg-light-100"), true);
-    });
+    }
   });
 
   it("className", () => {
     const content = renderView<ContainerPropsType>(Container, {
       className: "hover:bg-none",
+      children: "",
     });
 
     const dom = new DOMParser().parseFromString(content, "text/html")!;
-    const p = dom.querySelector("div")!;
-    assertEquals(p.classList.contains("hover:bg-none"), true);
+    const div = dom.querySelector("div")!;
+    assertEquals(div.classList.contains("hover:bg-none"), true);
+  });
+
+  describe("element", () => {
+    for (
+      const el of [
+        "header",
+        "nav",
+        "section",
+        "article",
+        "aside",
+        "footer",
+        "details",
+        "summary",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "div",
+        "p",
+      ]
+    ) {
+      it(el, () => {
+        const content = renderView<ContainerPropsType>(Container, {
+          element: el as any,
+          children: "",
+        });
+
+        const dom = new DOMParser().parseFromString(content, "text/html")!;
+        const p = dom.querySelector(el)!;
+        assert(p);
+      });
+    }
   });
 });

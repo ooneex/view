@@ -1,6 +1,7 @@
 // deno-lint-ignore no-explicit-any
 export const definition: Record<string, any> = {
   border: {
+    none: "border-0",
     variant: {
       primary: { normal: "border-primary", light: "border-primary-400" },
       secondary: {
@@ -21,49 +22,52 @@ export const definition: Record<string, any> = {
       "3": "border-3",
       "4": "border-4",
       "6": "border-6",
-      "DEFAULT": "border-1",
     },
   },
   radius: {
     full: "rounded-full",
     none: "rounded-none",
     all: {
-      DEFAULT: "rounded",
       l: "rounded-l",
       m: "rounded-m",
+      s: "rounded-s",
+      xs: "rounded-xs",
     },
     top: {
-      DEFAULT: "rounded-t",
       l: "rounded-t-l",
       m: "rounded-t-m",
+      s: "rounded-t-s",
+      xs: "rounded-t-xs",
     },
     right: {
-      DEFAULT: "rounded-r",
       l: "rounded-r-l",
       m: "rounded-r-m",
+      s: "rounded-r-s",
+      xs: "rounded-r-xs",
     },
     bottom: {
-      DEFAULT: "rounded-b",
       l: "rounded-b-l",
       m: "rounded-b-m",
+      s: "rounded-b-s",
+      xs: "rounded-b-xs",
     },
     left: {
-      DEFAULT: "rounded-l",
       l: "rounded-l-l",
       m: "rounded-l-m",
+      s: "rounded-l-s",
+      xs: "rounded-l-xs",
     },
   },
   shadow: {
     none: "drop-shadow-none",
+    xs: "drop-shadow-xs",
     s: "drop-shadow-s",
     m: "drop-shadow-m",
-    DEFAULT: "drop-shadow",
     l: "drop-shadow-l",
     xl: "drop-shadow-xl",
   },
   bgc: {
     none: "bg-none",
-
     primary: {
       "100": "bg-primary-100",
       "200": "bg-primary-200",
@@ -73,7 +77,7 @@ export const definition: Record<string, any> = {
       "600": "bg-primary-600",
       "700": "bg-primary-700",
       "800": "bg-primary-800",
-      "DEFAULT": "bg-primary",
+      "900": "bg-primary-900",
     },
     secondary: {
       "100": "bg-secondary-100",
@@ -84,7 +88,7 @@ export const definition: Record<string, any> = {
       "600": "bg-secondary-600",
       "700": "bg-secondary-700",
       "800": "bg-secondary-800",
-      "DEFAULT": "bg-secondary",
+      "900": "bg-secondary-900",
     },
     error: {
       "100": "bg-error-100",
@@ -95,7 +99,7 @@ export const definition: Record<string, any> = {
       "600": "bg-error-600",
       "700": "bg-error-700",
       "800": "bg-error-800",
-      "DEFAULT": "bg-error",
+      "900": "bg-error-900",
     },
     warning: {
       "100": "bg-warning-100",
@@ -106,7 +110,7 @@ export const definition: Record<string, any> = {
       "600": "bg-warning-600",
       "700": "bg-warning-700",
       "800": "bg-warning-800",
-      "DEFAULT": "bg-warning",
+      "900": "bg-warning-900",
     },
     info: {
       "100": "bg-info-100",
@@ -117,7 +121,7 @@ export const definition: Record<string, any> = {
       "600": "bg-info-600",
       "700": "bg-info-700",
       "800": "bg-info-800",
-      "DEFAULT": "bg-info",
+      "900": "bg-info-900",
     },
     success: {
       "100": "bg-success-100",
@@ -128,7 +132,7 @@ export const definition: Record<string, any> = {
       "600": "bg-success-600",
       "700": "bg-success-700",
       "800": "bg-success-800",
-      "DEFAULT": "bg-success",
+      "900": "bg-success-900",
     },
     dark: {
       "100": "bg-dark-100",
@@ -139,7 +143,7 @@ export const definition: Record<string, any> = {
       "600": "bg-dark-600",
       "700": "bg-dark-700",
       "800": "bg-dark-800",
-      "DEFAULT": "bg-dark",
+      "900": "bg-dark-900",
     },
     light: {
       "100": "bg-light-100",
@@ -150,7 +154,7 @@ export const definition: Record<string, any> = {
       "600": "bg-light-600",
       "700": "bg-light-700",
       "800": "bg-light-800",
-      "DEFAULT": "bg-light",
+      "900": "bg-light-900",
     },
   },
 };

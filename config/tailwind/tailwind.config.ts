@@ -3,6 +3,7 @@ import { ConfigType } from "./types.ts";
 const config: ConfigType = {
   content: [
     "./components/**/*.tsx",
+    "./components/**/definition.ts",
     "./islands/**/*.tsx",
     "./views/**/*.tsx",
   ],
@@ -18,6 +19,7 @@ const config: ConfigType = {
         "600": "#816CA0",
         "700": "#6C5390",
         "800": "#573B80",
+        "900": "#432371",
         "DEFAULT": "#432371",
       },
       secondary: {
@@ -29,6 +31,7 @@ const config: ConfigType = {
         "600": "#FBC9A7",
         "700": "#FBC098",
         "800": "#FAB789",
+        "900": "#FAAE7B",
         "DEFAULT": "#FAAE7B",
       },
       error: {
@@ -40,6 +43,7 @@ const config: ConfigType = {
         "600": "#DD5555",
         "700": "#D73838",
         "800": "#D11C1C",
+        "900": "#CC0000",
         "DEFAULT": "#CC0000",
       },
       warning: {
@@ -51,6 +55,7 @@ const config: ConfigType = {
         "600": "#FFAF55",
         "700": "#FFA238",
         "800": "#FF951C",
+        "900": "#FF8800",
         "DEFAULT": "#FF8800",
       },
       info: {
@@ -62,6 +67,7 @@ const config: ConfigType = {
         "600": "#55BBDD",
         "700": "#38AFD7",
         "800": "#1CA4D1",
+        "900": "#0099CC",
         "DEFAULT": "#0099CC",
       },
       success: {
@@ -73,6 +79,7 @@ const config: ConfigType = {
         "600": "#55A977",
         "700": "#389A60",
         "800": "#1C8C49",
+        "900": "#007E33",
         "DEFAULT": "#007E33",
       },
       dark: {
@@ -84,6 +91,7 @@ const config: ConfigType = {
         "600": "#735A7F",
         "700": "#5C3E6A",
         "800": "#452355",
+        "900": "#2E0840",
         "DEFAULT": "#2E0840",
       },
       light: {
@@ -95,7 +103,61 @@ const config: ConfigType = {
         "600": "#BFB3C4",
         "700": "#D4CCD8",
         "800": "#E9E5EB",
+        "900": "#FFFFFF",
         "DEFAULT": "#FFFFFF",
+      },
+    },
+    fontSize: {
+      xs: "0.6rem",
+      s: "0.8rem",
+      m: "1rem",
+      l: "1.25rem",
+      xl: "1.563rem",
+      "2xl": "1.953rem",
+      "3xl": "2.441rem",
+      "4xl": "3.052rem",
+      DEFAULT: "1rem",
+    },
+    fontFamily: {
+      primary: {
+        light: {
+          DEFAULT: ['"Montserrat Light"'],
+          italic: ['"Montserrat Light Italic"'],
+        },
+        DEFAULT: ['"Montserrat Regular"'],
+        italic: ['"Montserrat Regular Italic"'],
+        medium: {
+          DEFAULT: ['"Montserrat Medium"'],
+          italic: ['"Montserrat Medium Italic"'],
+        },
+        "semi-bold": {
+          DEFAULT: ['"Montserrat Semi Bold"'],
+          italic: ['"Montserrat Semi Bold Italic"'],
+        },
+        bold: {
+          DEFAULT: ['"Montserrat Bold"'],
+          italic: ['"Montserrat Bold Italic"'],
+        },
+      },
+      secondary: {
+        light: {
+          DEFAULT: ['"MontserratAlternates Light"'],
+          italic: ['"MontserratAlternates Light Italic"'],
+        },
+        DEFAULT: ['"MontserratAlternates Regular"'],
+        italic: ['"MontserratAlternates Regular Italic"'],
+        medium: {
+          DEFAULT: ['"MontserratAlternates Medium"'],
+          italic: ['"MontserratAlternates Medium Italic"'],
+        },
+        "semi-bold": {
+          DEFAULT: ['"MontserratAlternates Semi Bold"'],
+          italic: ['"MontserratAlternates Semi Bold Italic"'],
+        },
+        bold: {
+          DEFAULT: ['"MontserratAlternates Bold"'],
+          italic: ['"MontserratAlternates Bold Italic"'],
+        },
       },
     },
     borderWidth: {
@@ -108,19 +170,22 @@ const config: ConfigType = {
       DEFAULT: "1px",
     },
     borderRadius: {
-      full: "50%",
-      l: "32px",
-      m: "16px",
       none: "0",
+      xs: "4px",
+      s: "8px",
+      m: "16px",
+      l: "32px",
+      full: "50%",
       DEFAULT: "8px",
     },
     dropShadow: {
       none: "none",
-      s: "0 1px 1px 0 #B9ACBF",
-      m: "0 3px 3px 0 #B9ACBF",
-      DEFAULT: "0 6px 6px 0 #B9ACBF",
+      xs: "0 1px 1px 0 #B9ACBF",
+      s: "0 3px 3px 0 #B9ACBF",
+      m: "0 6px 6px 0 #B9ACBF",
       l: "0 16px 16px 0 #B9ACBF",
       xl: "0 32px 64px 0 #B9ACBF",
+      DEFAULT: "0 6px 6px 0 #B9ACBF",
     },
   },
 };
