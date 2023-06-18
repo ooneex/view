@@ -161,12 +161,12 @@ const config: ConfigType = {
       },
     },
     borderWidth: {
-      "0": "0",
-      "1": "1px",
-      "2": "2px",
-      "3": "3px",
-      "4": "4px",
-      "6": "6px",
+      none: "0",
+      xs: "1px",
+      s: "2px",
+      m: "3px",
+      l: "4px",
+      xl: "6px",
       DEFAULT: "1px",
     },
     borderRadius: {

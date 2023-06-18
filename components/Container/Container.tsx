@@ -15,7 +15,7 @@ export const Container = (
   className = className ?? "";
   const Element = element;
 
-  const { type = "normal", size = "1", variant } = border ?? {};
+  const { type = "normal", size = "xs", variant } = border ?? {};
 
   if (variant) {
     className += " " + definition.border.variant[variant][type];

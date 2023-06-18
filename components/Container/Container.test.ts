@@ -37,7 +37,7 @@ describe("Container component", () => {
 
       const dom = new DOMParser().parseFromString(content, "text/html")!;
       const div = dom.querySelector("div")!;
-      assertEquals(div.classList.contains("border-0"), true);
+      assertEquals(div.classList.contains("border-none"), true);
     });
     describe("variant", () => {
       for (const variant of variants) {
@@ -64,7 +64,7 @@ describe("Container component", () => {
       }
     });
     describe("size", () => {
-      for (const size of [0, 1, 2, 3, 4, 6]) {
+      for (const size of ["none", "xs", "s", "m", "l", "xl"]) {
         it(`${size}`, () => {
           const content = renderView<ContainerPropsType>(Container, {
             border: { variant: "primary", size: `${size}` as BorderSizeType },
@@ -82,7 +82,7 @@ describe("Container component", () => {
         });
         const dom = new DOMParser().parseFromString(content, "text/html")!;
         const div = dom.querySelector("div")!;
-        assertEquals(div.classList.contains("border-1"), true);
+        assertEquals(div.classList.contains("border-xs"), true);
       });
     });
   });

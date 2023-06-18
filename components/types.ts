@@ -31,12 +31,12 @@ export type RadiusType =
   | Partial<Record<RadiusCornerType, "xs" | "s" | "m" | "l">>;
 
 export type BorderSizeType =
-  | "0"
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "6";
+  | "none"
+  | "xs"
+  | "s"
+  | "m"
+  | "l"
+  | "xl";
 
 export type FontTypeType =
   | "light"

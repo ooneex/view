@@ -1,7 +1,7 @@
 // deno-lint-ignore no-explicit-any
 export const definition: Record<string, any> = {
   border: {
-    none: "border-0",
+    none: "border-none",
     variant: {
       primary: { normal: "border-primary", light: "border-primary-400" },
       secondary: {
@@ -16,12 +16,12 @@ export const definition: Record<string, any> = {
       light: { normal: "border-light", light: "border-light-400" },
     },
     size: {
-      "0": "border-0",
-      "1": "border-1",
-      "2": "border-2",
-      "3": "border-3",
-      "4": "border-4",
-      "6": "border-6",
+      "none": "border-none",
+      "xs": "border-xs",
+      "s": "border-s",
+      "m": "border-m",
+      "l": "border-l",
+      "xl": "border-xl",
     },
   },
   radius: {

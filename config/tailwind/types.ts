@@ -65,12 +65,12 @@ export type ConfigType = {
       secondary: FontTypeType;
     };
     borderWidth: {
-      "0": "0";
-      "1": `${number}px`;
-      "2": `${number}px`;
-      "3": `${number}px`;
-      "4": `${number}px`;
-      "6": `${number}px`;
+      none: "0";
+      xs: `${number}px`;
+      s: `${number}px`;
+      m: `${number}px`;
+      l: `${number}px`;
+      xl: `${number}px`;
       DEFAULT: `${number}px`;
     };
     borderRadius: {
