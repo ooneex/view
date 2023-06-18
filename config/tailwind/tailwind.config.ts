@@ -107,6 +107,16 @@ const config: ConfigType = {
         "DEFAULT": "#FFFFFF",
       },
     },
+    spacing: {
+      none: "0",
+      xs: "8px",
+      s: "12px",
+      m: "16px",
+      l: "24px",
+      xl: "32px",
+      "2xl": "48px",
+      DEFAULT: "16px",
+    },
     fontSize: {
       xs: "0.6rem",
       s: "0.8rem",

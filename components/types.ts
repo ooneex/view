@@ -38,6 +38,15 @@ export type BorderSizeType =
   | "l"
   | "xl";
 
+export type SpacingType =
+  | "none"
+  | "xs"
+  | "s"
+  | "m"
+  | "l"
+  | "xl"
+  | "2xl";
+
 export type FontTypeType =
   | "light"
   | "light-italic"

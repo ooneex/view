@@ -49,6 +49,16 @@ export type ConfigType = {
       dark: ColorType;
       light: ColorType;
     };
+    spacing: {
+      none: "0";
+      xs: `${number}px`;
+      s: `${number}px`;
+      m: `${number}px`;
+      l: `${number}px`;
+      xl: `${number}px`;
+      "2xl": `${number}px`;
+      DEFAULT: `${number}px`;
+    };
     fontSize: {
       xs: `${number}rem`;
       s: `${number}rem`;
