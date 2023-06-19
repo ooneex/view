@@ -45,7 +45,8 @@ export type SpacingType =
   | "m"
   | "l"
   | "xl"
-  | "2xl";
+  | "2xl"
+  | "3xl";
 
 export type FontTypeType =
   | "light"

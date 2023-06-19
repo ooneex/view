@@ -183,6 +183,49 @@ describe("Container component", () => {
     }
   });
 
+  describe("spacing", () => {
+    const spacings = ["none", "xs", "s", "m", "l", "xl", "2xl", "3xl"];
+
+    for (const spacing of spacings) {
+      it(spacing, () => {
+        const content = renderView<ContainerPropsType>(Container, {
+          spacing: spacing as any,
+          children: "",
+        });
+
+        const dom = new DOMParser().parseFromString(content, "text/html")!;
+        const div = dom.querySelector("div")!;
+        assertEquals(div.classList.contains(`p-${spacing}`), true);
+      });
+    }
+
+    for (
+      const [edge, c] of [
+        ["y", "y"],
+        ["x", "x"],
+        ["top", "t"],
+        ["right", "r"],
+        ["bottom", "b"],
+        ["left", "l"],
+      ]
+    ) {
+      describe(edge, () => {
+        for (const spacing of spacings) {
+          it(spacing, () => {
+            const content = renderView<ContainerPropsType>(Container, {
+              spacing: { [edge]: spacing },
+              children: "",
+            });
+
+            const dom = new DOMParser().parseFromString(content, "text/html")!;
+            const div = dom.querySelector("div")!;
+            assertEquals(div.classList.contains(`p${c}-${spacing}`), true);
+          });
+        }
+      });
+    }
+  });
+
   it("className", () => {
     const content = renderView<ContainerPropsType>(Container, {
       className: "hover:bg-none",
@@ -198,6 +241,7 @@ describe("Container component", () => {
     for (
       const el of [
         "header",
+        "main",
         "nav",
         "section",
         "article",

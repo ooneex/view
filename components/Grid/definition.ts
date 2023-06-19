@@ -1,0 +1,40 @@
+// deno-lint-ignore no-explicit-any
+export const definition: Record<string, any> = {
+  size: {
+    xs: "grid-cols-xs",
+    s: "grid-cols-s",
+    m: "grid-cols-m",
+    l: "grid-cols-l",
+    xl: "grid-cols-xl",
+  },
+  gap: {
+    none: "gap-none",
+    xs: "gap-xs",
+    s: "gap-s",
+    m: "gap-m",
+    l: "gap-l",
+    xl: "gap-xl",
+    "2xl": "gap-2xl",
+    "3xl": "gap-3xl",
+    column: {
+      none: "gap-x-none",
+      xs: "gap-x-xs",
+      s: "gap-x-s",
+      m: "gap-x-m",
+      l: "gap-x-l",
+      xl: "gap-x-xl",
+      "2xl": "gap-x-2xl",
+      "3xl": "gap-x-3xl",
+    },
+    row: {
+      none: "gap-y-none",
+      xs: "gap-y-xs",
+      s: "gap-y-s",
+      m: "gap-y-m",
+      l: "gap-y-l",
+      xl: "gap-y-xl",
+      "2xl": "gap-y-2xl",
+      "3xl": "gap-y-3xl",
+    },
+  },
+};

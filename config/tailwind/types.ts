@@ -1,3 +1,5 @@
+// deno-lint-ignore-file no-explicit-any
+
 export type VariantKeyType =
   | "100"
   | "200"
@@ -51,13 +53,14 @@ export type ConfigType = {
     };
     spacing: {
       none: "0";
-      xs: `${number}px`;
-      s: `${number}px`;
-      m: `${number}px`;
-      l: `${number}px`;
-      xl: `${number}px`;
-      "2xl": `${number}px`;
-      DEFAULT: `${number}px`;
+      xs: `${number}rem`;
+      s: `${number}rem`;
+      m: `${number}rem`;
+      l: `${number}rem`;
+      xl: `${number}rem`;
+      "2xl": `${number}rem`;
+      "3xl": `${number}rem`;
+      DEFAULT: `${number}rem`;
     };
     fontSize: {
       xs: `${number}rem`;
@@ -101,5 +104,15 @@ export type ConfigType = {
       xl: `0 ${number}px ${number}px 0 #B9ACBF`;
       DEFAULT: `0 ${number}px ${number}px 0 #B9ACBF`;
     };
+    extend: {
+      gridTemplateColumns: {
+        xs: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+        s: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+        m: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+        l: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+        xl: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+      };
+    };
   };
+  plugins: any[];
 };

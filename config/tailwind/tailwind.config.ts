@@ -109,13 +109,22 @@ const config: ConfigType = {
     },
     spacing: {
       none: "0",
-      xs: "8px",
-      s: "12px",
-      m: "16px",
-      l: "24px",
-      xl: "32px",
-      "2xl": "48px",
-      DEFAULT: "16px",
+      // 8px
+      xs: "0.5rem",
+      // 12px
+      s: "0.75rem",
+      // 16px
+      m: "1rem",
+      // 24px
+      l: "1.5rem",
+      // 32px
+      xl: "2rem",
+      // 48px
+      "2xl": "3rem",
+      // 64px
+      "3xl": "4rem",
+      // 16px
+      DEFAULT: "1rem",
     },
     fontSize: {
       xs: "0.6rem",
@@ -197,7 +206,25 @@ const config: ConfigType = {
       xl: "0 32px 64px 0 #B9ACBF",
       DEFAULT: "0 6px 6px 0 #B9ACBF",
     },
+    extend: {
+      gridTemplateColumns: {
+        // 240px
+        xs: `repeat(auto-fit, minmax(15rem, 1fr))`,
+        // 256px
+        s: `repeat(auto-fit, minmax(16rem, 1fr))`,
+        // 288px
+        m: `repeat(auto-fit, minmax(18rem, 1fr))`,
+        // 320px
+        l: `repeat(auto-fit, minmax(20rem, 1fr))`,
+        // 384px
+        xl: `repeat(auto-fit, minmax(24rem, 1fr))`,
+      },
+    },
   },
+  plugins: [
+    // @ts-ignore: trust me
+    require("@tailwindcss/container-queries"),
+  ],
 };
 
 export default config;

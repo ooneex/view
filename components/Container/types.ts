@@ -3,6 +3,7 @@ import {
   JSX,
   RadiusType,
   ShadowType,
+  SpacingType,
   VariantOpacityType,
   VariantType,
 } from "../types.ts";
@@ -18,10 +19,16 @@ export type ContainerPropsType = {
   radius?: RadiusType;
   shadow?: ShadowType;
   bgc?: "none" | Partial<Record<VariantType, VariantOpacityType>>;
+  spacing?:
+    | SpacingType
+    | Partial<
+      Record<"y" | "x" | "top" | "right" | "bottom" | "left", SpacingType>
+    >;
   className?: string;
   children: JSX.Element;
   element?:
     | "header"
+    | "main"
     | "nav"
     | "section"
     | "article"

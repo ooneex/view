@@ -50,7 +50,7 @@
   },
   "tasks": {
     "start": "deno run -A --watch=.env,.env.local,config/,controllers/ index.ts",
-    "assets:watch": "docker-compose run --rm hypervit_view_assets sh ./watch.sh",
+    "assets:watch": "docker-compose run --build --rm hypervit_view_assets sh ./watch.sh",
     "assets:build": "docker-compose run --rm hypervit_view_assets sh ./build.sh",
     "assets:sh": "docker-compose run --rm hypervit_view_assets sh",
     "test": "deno test -A",
