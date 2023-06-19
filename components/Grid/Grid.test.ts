@@ -66,4 +66,13 @@ describe("Grid component", () => {
     const div = dom.querySelector("div")!;
     assertEquals(div.classList.contains("hover:grid-cols-l"), true);
   });
+
+  it("children", () => {
+    const content = renderView<GridPropsType>(Grid, {
+      children: "Hello",
+    });
+    const dom = new DOMParser().parseFromString(content, "text/html")!;
+    const div = dom.querySelector("div")!;
+    assertEquals(div.innerHTML, "Hello");
+  });
 });

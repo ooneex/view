@@ -60,6 +60,7 @@ export type ConfigType = {
       xl: `${number}rem`;
       "2xl": `${number}rem`;
       "3xl": `${number}rem`;
+      "4xl": `${number}rem`;
       DEFAULT: `${number}rem`;
     };
     fontSize: {
@@ -104,14 +105,12 @@ export type ConfigType = {
       xl: `0 ${number}px ${number}px 0 #B9ACBF`;
       DEFAULT: `0 ${number}px ${number}px 0 #B9ACBF`;
     };
-    extend: {
-      gridTemplateColumns: {
-        xs: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
-        s: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
-        m: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
-        l: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
-        xl: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
-      };
+    gridTemplateColumns: {
+      xs: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+      s: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+      m: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+      l: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
+      xl: `repeat(auto-fit, minmax(${number}rem, 1fr))`;
     };
   };
   plugins: any[];

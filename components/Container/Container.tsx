@@ -19,7 +19,7 @@ export const Container = (
 
   if (variant) {
     className += " " + definition.border.variant[variant][type];
-    className += " " + definition.border.size[size];
+    className += " " + definition.border.size[size as string];
   } else {
     className += " " + definition.border.none;
   }
@@ -39,7 +39,7 @@ export const Container = (
     if (left) className += " " + definition.radius.left[left];
   }
 
-  className += " " + definition.shadow[shadow];
+  className += " " + definition.shadow[shadow as string];
 
   if (bgc === "none") {
     className += " " + definition.bgc.none;

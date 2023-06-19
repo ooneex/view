@@ -123,6 +123,8 @@ const config: ConfigType = {
       "2xl": "3rem",
       // 64px
       "3xl": "4rem",
+      // 80px
+      "4xl": `5rem`,
       // 16px
       DEFAULT: "1rem",
     },
@@ -206,19 +208,17 @@ const config: ConfigType = {
       xl: "0 32px 64px 0 #B9ACBF",
       DEFAULT: "0 6px 6px 0 #B9ACBF",
     },
-    extend: {
-      gridTemplateColumns: {
-        // 240px
-        xs: `repeat(auto-fit, minmax(15rem, 1fr))`,
-        // 256px
-        s: `repeat(auto-fit, minmax(16rem, 1fr))`,
-        // 288px
-        m: `repeat(auto-fit, minmax(18rem, 1fr))`,
-        // 320px
-        l: `repeat(auto-fit, minmax(20rem, 1fr))`,
-        // 384px
-        xl: `repeat(auto-fit, minmax(24rem, 1fr))`,
-      },
+    gridTemplateColumns: {
+      // 240px
+      xs: `repeat(auto-fit, minmax(15rem, 1fr))`,
+      // 256px
+      s: `repeat(auto-fit, minmax(16rem, 1fr))`,
+      // 288px
+      m: `repeat(auto-fit, minmax(18rem, 1fr))`,
+      // 320px
+      l: `repeat(auto-fit, minmax(20rem, 1fr))`,
+      // 384px
+      xl: `repeat(auto-fit, minmax(24rem, 1fr))`,
     },
   },
   plugins: [

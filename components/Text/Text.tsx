@@ -19,7 +19,22 @@ export const Text = (
   className += " " + definition.size[size];
   className += " " + definition.font[font][type];
 
-  const Element = element;
+  switch (element) {
+    case "blockquote":
+      return <blockquote className={className.trim()}>{children}</blockquote>;
+    case "q":
+      return <q className={className.trim()}>{children}</q>;
+    case "abbr":
+      return <abbr className={className.trim()}>{children}</abbr>;
+    case "address":
+      return <address className={className.trim()}>{children}</address>;
+    case "cite":
+      return <cite className={className.trim()}>{children}</cite>;
+    case "bdo":
+      return <bdo className={className.trim()}>{children}</bdo>;
+    case "span":
+      return <span className={className.trim()}>{children}</span>;
+  }
 
-  return <Element className={className.trim()}>{children}</Element>;
+  return <p className={className.trim()}>{children}</p>;
 };

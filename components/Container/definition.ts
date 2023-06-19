@@ -16,12 +16,12 @@ export const definition: Record<string, any> = {
       light: { normal: "border-light", light: "border-light-400" },
     },
     size: {
-      "none": "border-none",
-      "xs": "border-xs",
-      "s": "border-s",
-      "m": "border-m",
-      "l": "border-l",
-      "xl": "border-xl",
+      none: "border-none",
+      xs: "border-xs",
+      s: "border-s",
+      m: "border-m",
+      l: "border-l",
+      xl: "border-xl",
     },
   },
   radius: {
@@ -166,6 +166,7 @@ export const definition: Record<string, any> = {
     xl: "p-xl",
     "2xl": "p-2xl",
     "3xl": "p-3xl",
+    "4xl": "p-4xl",
     y: {
       none: "py-none",
       xs: "py-xs",
@@ -175,6 +176,7 @@ export const definition: Record<string, any> = {
       xl: "py-xl",
       "2xl": "py-2xl",
       "3xl": "py-3xl",
+      "4xl": "py-4xl",
     },
     x: {
       none: "px-none",
@@ -185,6 +187,7 @@ export const definition: Record<string, any> = {
       xl: "px-xl",
       "2xl": "px-2xl",
       "3xl": "px-3xl",
+      "4xl": "px-4xl",
     },
     top: {
       none: "pt-none",
@@ -195,6 +198,7 @@ export const definition: Record<string, any> = {
       xl: "pt-xl",
       "2xl": "pt-2xl",
       "3xl": "pt-3xl",
+      "4xl": "pt-4xl",
     },
     right: {
       none: "pr-none",
@@ -205,6 +209,7 @@ export const definition: Record<string, any> = {
       xl: "pr-xl",
       "2xl": "pr-2xl",
       "3xl": "pr-3xl",
+      "4xl": "pr-4xl",
     },
     bottom: {
       none: "pb-none",
@@ -215,6 +220,7 @@ export const definition: Record<string, any> = {
       xl: "pb-xl",
       "2xl": "pb-2xl",
       "3xl": "pb-3xl",
+      "4xl": "pb-4xl",
     },
     left: {
       none: "pl-none",
@@ -225,6 +231,7 @@ export const definition: Record<string, any> = {
       xl: "pl-xl",
       "2xl": "pl-2xl",
       "3xl": "pl-3xl",
+      "4xl": "pl-4xl",
     },
   },
 };

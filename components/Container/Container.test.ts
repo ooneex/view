@@ -184,7 +184,7 @@ describe("Container component", () => {
   });
 
   describe("spacing", () => {
-    const spacings = ["none", "xs", "s", "m", "l", "xl", "2xl", "3xl"];
+    const spacings = ["none", "xs", "s", "m", "l", "xl", "2xl", "3xl", "4xl"];
 
     for (const spacing of spacings) {
       it(spacing, () => {

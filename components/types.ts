@@ -30,23 +30,7 @@ export type RadiusType =
   | "none"
   | Partial<Record<RadiusCornerType, "xs" | "s" | "m" | "l">>;
 
-export type BorderSizeType =
-  | "none"
-  | "xs"
-  | "s"
-  | "m"
-  | "l"
-  | "xl";
-
-export type SpacingType =
-  | "none"
-  | "xs"
-  | "s"
-  | "m"
-  | "l"
-  | "xl"
-  | "2xl"
-  | "3xl";
+export type BorderSizeType = "none" | Omit<SizeType, "2xl" | "3xl" | "4xl">;
 
 export type FontTypeType =
   | "light"
@@ -70,6 +54,6 @@ export type SizeType =
   | "3xl"
   | "4xl";
 
-export type ShadowType = "none" | "xs" | "s" | "m" | "l" | "xl";
+export type SpacingType = "none" | SizeType;
 
-export type BreakpointType = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type ShadowType = "none" | Omit<SizeType, "2xl" | "3xl" | "4xl">;
