@@ -5,5 +5,5 @@ export type IconType = keyof typeof ICONS;
 
 export type FontIconPropsType = {
   name: IconType;
-  size?: Omit<SizeType, "DEFAULT"> | "3xl";
+  size?: Omit<SizeType, "4xl">;
 };
